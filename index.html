@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <title>Article preview component</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./styles.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <article class="article-container">
+    <div class="img-container">
+      <img class="item-img" src="./images/drawers.jpg" alt="Green asthetic drawers with a vase." />
+    </div>
+
+    <div class="article-content">
+      <h2>
+        Shift the overall look and feel by adding these wonderful touches to
+        furniture in your home
+      </h2>
+      <p class="article-desc">
+        Ever been in a room and felt like something was missing? Perhaps it
+        felt slightly bare and uninviting. I’ve got some simple tips to help
+        you make any room feel complete.
+      </p>
+      <div class="seller">
+        <img class="seller-img" src="./images/avatar-michelle.jpg" alt="Smiling Michelle." />
+        <div class="seller-info">
+          <div>
+            <p class="seller-name">Michelle Appleton</p>
+            <p class="date">28 Jun 2020</p>
+          </div>
+          <button id="share-btn" aria-label="Share this article.">
+            <i class="fa-solid fa-share"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="tt" id="tt" aria-live="polite">
+      <div class="tooltip">
+        <span class="tooltiptext">Share</span>
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-pinterest"></i>
+      </div>
+      <div class="tip"></div>
+    </div>
+  </article>
+
+  <div class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+      href="https://www.linkedin.com/in/amna-iqbal-2aaa08263/" target="_blank">Amna Iqbal</a>.
+  </div>
+  <script>
+    const toolTip = document.getElementById("tt");
+    const shareBtn =  document.querySelector('#share-btn')
+    const shareIcons = document.querySelector('.fa-share');
+    shareBtn.addEventListener('click', () => {
+      shareBtn.setAttribute('aria-expanded', toolTip.classList.toggle('active'));
+      console.log(shareBtn)
+      shareIcons.classList.toggle('active');
+    });
+  </script>
+</body>
+
+</html>
